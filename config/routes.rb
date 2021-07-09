@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :posts do 
+  resources :posts do
+    resources :likes, only: %i[create destroy]
     resources :reviews, only: %i[create new]
   end
 
