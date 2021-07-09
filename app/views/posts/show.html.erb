@@ -1,10 +1,20 @@
 <div class="container">
-  <div class="row">
+  <div class="row mt-4">
     <div class="col-sm-8 offset-sm-2">
+
       <div id="post-content">
         <h1><%= @post.title %></h1>
         <p><%= @post.content %></p>
+        <h3>Reviews</h3>
+        <hr>
+        <% @post.reviews.each do |review| %>
+          <p><%= review.body %></p>
+          <hr>
+        <% end %>
       </div>
+
+      <%= link_to 'Write a review',  new_post_review_path(@post) %>
+
     </div>
   </div>
 </div>
