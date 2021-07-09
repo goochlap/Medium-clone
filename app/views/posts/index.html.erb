@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+
+    <h1><strong>POSTS</strong></h1>
+    <hr>
+
+      <div id="posts">
+        <% @posts.each do |post| %>
+          <h4><%= post.user.name %></h4>
+          <p>· <%= post.created_at.strftime("%Y-%m-%d") %></p>
+          <h1> <%= link_to post.title, post_path(post) %> </h1>
+          <hr>
+        <% end %>
+      </div>
+
+    </div>
+    
+  </div>
+</div>
