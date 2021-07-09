@@ -5,6 +5,10 @@
       <div id="post-content">
         <h1><%= @post.title %></h1>
         <p><%= @post.content %></p>
+
+        <%= button_to "Like", post_likes_path(@post), method: :post %> <br>
+        <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+
         <h3>Reviews</h3>
         <hr>
         <% @post.reviews.each do |review| %>
