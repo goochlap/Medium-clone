@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :users
 
   resources :posts do 
-    resources :reviews, only: [:create, new]
+    resources :reviews, only: %i[create new]
   end
 
-  resources :reviews, only: [:destroy]
+  resources :reviews, only: %i[destroy]
 end
