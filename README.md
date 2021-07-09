@@ -12,3 +12,4 @@ Create a medium clone app
 
 - `yarn install`
 - `rails db:create db:migrate`
+- `bundle install`
