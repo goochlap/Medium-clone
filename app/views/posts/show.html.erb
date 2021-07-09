@@ -6,7 +6,9 @@
         <h1><%= @post.title %></h1>
         <p><%= @post.content %></p>
 
-        <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+        <% if user_signed_in? %>
+          <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+        <% end %>
         <% if pre_like %>
           <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
         <% else %>
