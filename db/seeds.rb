@@ -20,7 +20,7 @@ puts "Populate database"
     password: '123456'
   )
 
-  post = Post.new(title: Faker::ChuckNorris.fact, content: Faker::Lorem.paragraph(sentence_count: 20))
+  post = Post.new(title: Faker::ChuckNorris.fact, content: Faker::Lorem.paragraph(sentence_count: 20), published: true)
   post.user = user
   post.save
 end

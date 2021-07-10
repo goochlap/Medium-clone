@@ -10,6 +10,7 @@ class Post < ApplicationRecord
   validates :content, presence: true
 
   def default_values
+    # Comment this method when run the seed
     self.published = false
   end
 end
