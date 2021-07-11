@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
     if @post.save!
-      redirect_to post_path(@post), alert: 'Post created with success!'
+      redirect_to user_path(current_user), alert: 'Post created with success!'
     else
       render :new
     end
