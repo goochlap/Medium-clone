@@ -11,24 +11,51 @@
     <% end %>
   </div>
 
-  <div class="row">
-    <div class="col-12">
+  <div class="container-center">
+  
+    <div id="posts">
+      <% @posts.each do |post| %>
+        
+        <% if post.published %>
+          <h4><%= post.user.name %></h4>
+          <p>· <%= post.created_at.strftime("%Y-%m-%d") %></p>
+          <h1> <%= link_to post.title, post_path(post) %> </h1>
+          <span><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></span>
+          <hr>
+        <% end %>
+      <% end %>
+    </div>
 
-      <div id="posts">
-        <% @posts.each do |post| %>
-          
-          <% if post.published %>
-            <h4><%= post.user.name %></h4>
-            <p>· <%= post.created_at.strftime("%Y-%m-%d") %></p>
-            <h1> <%= link_to post.title, post_path(post) %> </h1>
-            <span><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></span>
-            <hr>
-          <% end %>
-          
+    <div class="s-inline"></div>
+
+    <div class="wrapper-topics">
+
+      <div class="recommandations s-hr">
+        <p>RECOMMENDED TOPICS</p>
+        <div class="suggestions">
+          <a href="#">Programming</a>
+          <a href="#">Math</a>
+          <a href="#">Productivity</a>
+          <a href="#">Beauty</a>
+          <a href="#">Gaming</a>
+          <a href="#">Dinosaur</a>
+          <a href="#">Blockchain</a>
+        </div>
+      </div>
+
+      <div class="following s-hr">
+        <p>WHO TO FOLLOW</p>
+        <% @users[0..2].each do |user| %>
+          <li>
+            <a href="#"><%= user.name %></a>
+          </li>
         <% end %>
       </div>
+
 
     </div>
 
   </div>
+
+
 </div>

@@ -3,6 +3,50 @@
   text-decoration: none;
 }
 
-#posts h4 {
+h4 {
   color: grey;
+  font-weight: 400;
+}
+
+.wrapper-topics {
+  width: 556px;
+  position: sticky;
+  padding-top: 32px;
+  margin-top: 0px;
+  top: 0;
+  p {
+    padding-bottom: 32px;
+    letter-spacing: 0.077em;
+    line-height: 18px;
+  }
+}
+
+.recommandations {
+  padding-bottom: 40px;
+}
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  a {
+    margin-right: 8px;
+    margin-bottom: 10px;
+    color: inherit;
+    text-decoration: none;
+    background-color: rgb(233, 232, 232);
+    padding: 8px;
+    border-radius: 100px;
+  }
+}
+
+.following {
+  padding: 40px 0;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 807px) {
+  .wrapper-topics {
+    display: none;
+  }
 }
