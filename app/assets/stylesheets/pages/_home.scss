@@ -29,19 +29,18 @@ h4 {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  a {
-    margin-right: 8px;
-    margin-bottom: 10px;
-    color: inherit;
-    text-decoration: none;
-    background-color: rgb(233, 232, 232);
-    padding: 8px;
-    border-radius: 100px;
-  }
 }
 
-.following {
+.wrapper-category {
   padding: 40px 0;
+  display: block;
+}
+
+.suggestions-users {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
 }
 
 // Smallest device

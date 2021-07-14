@@ -33,23 +33,29 @@
       <div class="recommandations s-hr">
         <p>RECOMMENDED TOPICS</p>
         <div class="suggestions">
-          <a href="#">Programming</a>
-          <a href="#">Math</a>
-          <a href="#">Productivity</a>
-          <a href="#">Beauty</a>
-          <a href="#">Gaming</a>
-          <a href="#">Dinosaur</a>
-          <a href="#">Blockchain</a>
+          <a class="link-suggest" href="#">Programming</a>
+          <a class="link-suggest" href="#">Math</a>
+          <a class="link-suggest" href="#">Productivity</a>
+          <a class="link-suggest" href="#">Beauty</a>
+          <a class="link-suggest" href="#">Gaming</a>
+          <a class="link-suggest" href="#">Dinosaur</a>
+          <a class="link-suggest" href="#">Blockchain</a>
         </div>
       </div>
 
-      <div class="following s-hr">
+      <div class="wrapper-category s-hr">
         <p>WHO TO FOLLOW</p>
-        <% @users[0..2].each do |user| %>
-          <li>
-            <a href="#"><%= user.name %></a>
-          </li>
-        <% end %>
+
+          <% @users[0..2].each do |user| %>
+            <div class="suggestions-users">
+              <a href="#"><%= user.name %></a>
+              <button class="btn-follow">Follow</button>
+            </div>
+          <% end %>
+        </div>
+
+      <div class="wrapper-category s-hr">
+        
       </div>
 
 
