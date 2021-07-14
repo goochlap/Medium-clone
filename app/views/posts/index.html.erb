@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="search-form-control form-group">
+  <div class="search-form-control">
     <%= form_tag posts_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
@@ -15,15 +15,17 @@
   
     <div id="posts">
       <% @posts.each do |post| %>
-        
+
         <% if post.published %>
-          <h4><%= post.user.name %></h4>
-          <p>· <%= post.created_at.strftime("%Y-%m-%d") %></p>
-          <h1> <%= link_to post.title, post_path(post) %> </h1>
-          <span><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></span>
-          <hr>
+          <div class="card-post s-hr">
+            <h3><%= post.user.name %></h3>
+            <h1> <%= link_to post.title.capitalize, post_path(post) %></h1>
+            <h4><%= post.content.to_plain_text.truncate(100) %></h4>
+            <p><%= post.created_at.strftime("%B %d, %Y") %> ·</p>
+            <span>🚀 <%= post.likes.count %></span>
+            <% end %>
+          </div>
         <% end %>
-      <% end %>
     </div>
 
     <div class="s-inline"></div>
