@@ -4,7 +4,23 @@
 
 
           <div id="post-show">
-            <h1><%= @post.title %></h1>
+            <div class="header-post">
+              <h1><%= @post.title %></h1>
+              <div class="card-author">
+                <div class="post-infos">
+                  <a href="#"><%= @post.user.name %></a>
+                  <a href="#" class="btn-follow" style="background-color: green; color:white;">Follow</a><br>
+                  <a href="#"><%= @post.created_at.strftime("%B %d, %Y") %></a>
+                  <p>5 min read</p>
+                </div>
+                <div class="links-user">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+
             <p><%= @post.content %></p>
 
             <% if user_signed_in? %>
