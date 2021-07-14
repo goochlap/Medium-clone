@@ -55,7 +55,20 @@
         </div>
 
       <div class="wrapper-category s-hr">
-        
+        <p>READING LIST</p>
+        <h4><%= link_to @users.first.posts.first.title, post_path(@users.first.posts.first) %></h4>
+        <%= link_to "See your full reading list", root_path, style:"color: rgba(26, 137, 23, 1)" %>
+      </div>
+
+      <div class="footer-index">
+        <a href="">Help</a>
+        <a href="">Status</a>
+        <a href="">Writers</a>
+        <a href="">Blog</a>
+        <a href="">Carrers</a>
+        <a href="">Privacy</a>
+        <a href="">Terms</a>
+        <a href="">About</a>
       </div>
 
 

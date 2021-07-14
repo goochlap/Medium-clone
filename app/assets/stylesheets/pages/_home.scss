@@ -1,6 +1,10 @@
-#posts a {
+body a {
   color: black;
-  text-decoration: none;
+  text-decoration: none !important;
+}
+
+body a:hover {
+  color: black;
 }
 
 h4 {
@@ -34,6 +38,11 @@ h4 {
 .wrapper-category {
   padding: 40px 0;
   display: block;
+  h4 {
+    font-size: 16px;
+    font-weight: 700;
+    padding-bottom: 24px;
+  }
 }
 
 .suggestions-users {
