@@ -1,8 +1,65 @@
-#posts a {
+body a {
   color: black;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
-#posts h4 {
+body a:hover {
+  color: black;
+}
+
+h4 {
   color: grey;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+#posts {
+  padding-top: 48px;
+}
+
+.wrapper-topics {
+  width: 556px;
+  position: sticky;
+  padding-top: 32px;
+  margin-top: 0px;
+  top: 0;
+  p {
+    padding-bottom: 32px;
+    letter-spacing: 0.077em;
+    line-height: 18px;
+  }
+}
+
+.recommandations {
+  padding-bottom: 40px;
+}
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.wrapper-category {
+  padding: 40px 0;
+  display: block;
+  h4 {
+    font-size: 16px;
+    font-weight: 700;
+    padding-bottom: 24px;
+  }
+}
+
+.suggestions-users {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 807px) {
+  .wrapper-topics {
+    display: none;
+  }
 }

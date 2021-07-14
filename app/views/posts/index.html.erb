@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="search-form-control form-group">
+  <div class="search-form-control">
     <%= form_tag posts_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
@@ -11,24 +11,72 @@
     <% end %>
   </div>
 
-  <div class="row">
-    <div class="col-12">
+  <div class="container-center">
+  
+    <div id="posts">
+      <% @posts.each do |post| %>
 
-      <div id="posts">
-        <% @posts.each do |post| %>
-          
-          <% if post.published %>
-            <h4><%= post.user.name %></h4>
-            <p>· <%= post.created_at.strftime("%Y-%m-%d") %></p>
-            <h1> <%= link_to post.title, post_path(post) %> </h1>
-            <span><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></span>
-            <hr>
-          <% end %>
-          
+        <% if post.published %>
+          <div class="card-post s-hr">
+            <h3><%= post.user.name %></h3>
+            <h1> <%= link_to post.title.capitalize, post_path(post) %></h1>
+            <h4><%= post.content.to_plain_text.truncate(100) %></h4>
+            <p><%= post.created_at.strftime("%B %d, %Y") %> ·</p>
+            <span>🚀 <%= post.likes.count %></span>
+            <% end %>
+          </div>
         <% end %>
+    </div>
+
+    <div class="s-inline"></div>
+
+    <div class="wrapper-topics">
+
+      <div class="recommandations s-hr">
+        <p>RECOMMENDED TOPICS</p>
+        <div class="suggestions">
+          <a class="link-suggest" href="#">Programming</a>
+          <a class="link-suggest" href="#">Math</a>
+          <a class="link-suggest" href="#">Productivity</a>
+          <a class="link-suggest" href="#">Beauty</a>
+          <a class="link-suggest" href="#">Gaming</a>
+          <a class="link-suggest" href="#">Dinosaur</a>
+          <a class="link-suggest" href="#">Blockchain</a>
+        </div>
       </div>
+
+      <div class="wrapper-category s-hr">
+        <p>WHO TO FOLLOW</p>
+
+          <% @users[0..2].each do |user| %>
+            <div class="suggestions-users">
+              <a href="#"><%= user.name %></a>
+              <button class="btn-follow">Follow</button>
+            </div>
+          <% end %>
+        </div>
+
+      <div class="wrapper-category s-hr">
+        <p>READING LIST</p>
+        <h4><%= link_to @users.first.posts.first.title, post_path(@users.first.posts.first) %></h4>
+        <%= link_to "See your full reading list", root_path, style:"color: rgba(26, 137, 23, 1)" %>
+      </div>
+
+      <div class="footer-index">
+        <a href="">Help</a>
+        <a href="">Status</a>
+        <a href="">Writers</a>
+        <a href="">Blog</a>
+        <a href="">Carrers</a>
+        <a href="">Privacy</a>
+        <a href="">Terms</a>
+        <a href="">About</a>
+      </div>
+
 
     </div>
 
   </div>
+
+
 </div>

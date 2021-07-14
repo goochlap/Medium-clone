@@ -1,0 +1,16 @@
+.s-hr {
+  border-bottom: 1px solid rgba(230, 230, 230, 1);
+}
+
+.s-inline {
+  min-height: 100vh;
+  margin-right: 56px;
+  border-right: 1px solid rgba(230, 230, 230, 1);
+  padding-right: 56px;
+}
+// Smallest device
+@media (min-width: 100px) and (max-width: 807px) {
+  .s-inline {
+    display: none;
+  }
+}

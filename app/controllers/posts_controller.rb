@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end
+    @users = User.all
   end
 
   def new
