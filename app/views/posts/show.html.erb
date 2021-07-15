@@ -2,48 +2,53 @@
   <div class="container">
     <div class="container-center flex-column align-items-center">
 
-
-          <div id="post-show">
-            <div class="header-post">
-              <h1><%= @post.title %></h1>
-              <div class="card-author">
-                <div class="post-infos">
-                  <a href="#"><%= @post.user.name %></a>
-                  <a href="#" class="btn-follow" style="background-color: green; color:white;">Follow</a><br>
-                  <a href="#"><%= @post.created_at.strftime("%B %d, %Y") %></a>
-                  <p>5 min read</p>
-                </div>
-                <div class="links-user">
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#"><i class="fab fa-twitter"></i></a>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-              </div>
+      <div id="post-show">
+        <div class="header-post">
+          <h1><%= @post.title.capitalize %></h1>
+          <div class="card-author">
+            <div class="post-infos">
+              <a href="#"><strong><%= @post.user.name.capitalize %></strong></a>
+              <a href="#" class="btn-follow" style="background-color: green; color:white;">Follow</a><br>
+              <a href="#"><%= @post.created_at.strftime("%B %d, %Y") %></a>
+              <p>5 min read</p>
             </div>
-
-            <p><%= @post.content %></p>
-
-            <% if user_signed_in? %>
-              <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
-            <% end %>
-            <% if pre_like %>
-              <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
-            <% else %>
-              <%= button_to 'Like', post_likes_path(@post), method: :post %>
-            <% end %>
-            <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-
-            <h3>Reviews</h3>
-            <hr>
-            <% @post.reviews.each do |review| %>
-              <p><%= review.body %></p>
-              <hr>
-            <% end %>
+            <div class="links-user">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
           </div>
+        </div>
 
-          <%= link_to 'Write a review',  new_post_review_path(@post) %>
+        <div class="post-content">
+          <p><%= @post.content %></p>
+        </div>
+
+        <div class="post-evaluations">
+          <% if user_signed_in? %>
+            <% pre_like = @post.likes.find { |like| like.user_id == current_user.id } %>
+          <% end %>
+          <% if pre_like %>
+            <%= link_to '👏', post_like_path(@post, pre_like), method: :delete %>
+          <% else %>
+            <%= link_to '👏', post_likes_path(@post), method: :post %>
+          <% end %>
+          <p><%= @post.likes.count %></p>
+          <%= link_to '🗨️', new_post_review_path(@post) %>
+          <p><%= @post.reviews.count %></p>
+        </div>
+
+        <div class="reviews">
+          <h3>Reviews</h3>
+          <div class="s-hr"></div>
+          <% @post.reviews.each do |review| %>
+            <p><%= review.body %></p>
+            <hr>
+          <% end %>
+        </div>
+
+      </div>
 
     </div>
-
   </div>
 </article>

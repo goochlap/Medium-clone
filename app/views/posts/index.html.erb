@@ -18,7 +18,7 @@
 
         <% if post.published %>
           <div class="card-post s-hr">
-            <h3><%= post.user.name %></h3>
+            <h3><%= post.user.name.capitalize %></h3>
             <h1> <%= link_to post.title.capitalize, post_path(post) %></h1>
             <h4><%= post.content.to_plain_text.truncate(100) %></h4>
             <p><%= post.created_at.strftime("%B %d, %Y") %> ·</p>

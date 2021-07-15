@@ -8,9 +8,33 @@
   padding-top: 48px;
   h1 {
     font-weight: bold;
+    margin-bottom: 24px;
+    font-size: 48px;
+    font-weight: 600;
   }
 }
 
 .post-infos > * {
-  margin: 0 2px;
+  padding: 4px;
+}
+
+.post-content > * {
+  margin-top: 2em;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.reviews {
+  margin-bottom: 22px;
+}
+
+.post-evaluations {
+  display: flex;
+  a:nth-child(3) {
+    margin-left: 12px;
+  }
+  p {
+    margin-left: 6px;
+    font-weight: bold;
+  }
 }
