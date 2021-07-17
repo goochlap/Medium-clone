@@ -1,5 +1,4 @@
-const activeSideBar = (e) => {
-  
+const activeSideBar = () => {
   const sidebar = document.querySelector('.sidebar-post');
 
   if (sidebar) {
@@ -20,9 +19,19 @@ const activeSideBar = (e) => {
     }
     
     
-    function checkSlide(e) {
-      const slideInAt = window.scrollY;
-      if (slideInAt > 250) {
+    function checkSlide() {
+      
+      // select elements to scale the scrolling interval
+      const headerSize = document.querySelector('.header-post');
+      const content = document.querySelector('.post-content');
+      
+      const bottomContent = (content.offsetHeight - 100);
+      const bottomHeader = headerSize.offsetHeight;
+      console.log(window.scrollY);
+      console.log('bottomHeader: ' + bottomHeader);
+      console.log('bottomContent: '+ bottomContent);
+
+      if ((window.scrollY > bottomHeader) && (window.scrollY < bottomContent) ) {
         sidebar.classList.add('active')
       } else {
         sidebar.classList.remove('active');
