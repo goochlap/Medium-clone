@@ -38,3 +38,20 @@
     font-weight: bold;
   }
 }
+
+// TEST SIDEBAR
+
+.sidebar-post {
+  width: 100%; 
+  position: fixed; 
+  top: 0;
+  transition: opacity 200ms;
+  transform: translateY(86px);
+}
+
+.container-sidebar {
+  margin: 0 64px;
+  min-width: 0;
+  max-width: 1336px;
+  width: 100%;
+}
