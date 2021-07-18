@@ -2,14 +2,34 @@
   <div class="sidebar-post slide-in">
     <div class="d-flex justify-content-center">
       <div class="container-sidebar">
-      <div class="d-flex ">
-        <h1>HELLO</h1>
-        <h2>hello</h2>
-        <h3>hello</h3>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
+      <div class="wrapper-sidebar">
+      <div class="user-infos">
+        <h3><a href=""><%= @post.user.name.capitalize %></a></h3>
+        <a href="#" class="btn-follow" style="background-color: green; color:white;">Follow</a>
+        <div class="s-hr" style="margin: 18px 0;"></div>
+      </div>
+      <div class="user-follow">
+          <h4><%= @post.user.name.upcase %> FOLLOWS</h4>
+          <span>random user</span>
+          <span>random user</span>
+          <span>random user</span>
+          <span>random user</span>
+          <a href="">see all (...)</a>
+      </div>
+      <div class="s-hr" style="margin: 18px 0;"></div>
+      <div class="post-evaluations">
+          <% if user_signed_in? %>
+            <% pre_like = @post.likes.find { |like| like.user_id == current_user.id } %>
+          <% end %>
+          <% if pre_like %>
+            <%= link_to '👏', post_like_path(@post, pre_like), method: :delete %>
+          <% else %>
+            <%= link_to '👏', post_likes_path(@post), method: :post %>
+          <% end %>
+          <p><%= @post.likes.count %></p>
+          <%= link_to '🗨️', new_post_review_path(@post) %>
+          <p><%= @post.reviews.count %></p>
+        </div>
       
       </div>
       

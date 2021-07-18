@@ -25,7 +25,7 @@ const activeSideBar = () => {
       const headerSize = document.querySelector('.header-post');
       const content = document.querySelector('.post-content');
       
-      const bottomContent = (content.offsetHeight - 100);
+      const bottomContent = (content.offsetHeight - 500);
       const bottomHeader = headerSize.offsetHeight;
       console.log(window.scrollY);
       console.log('bottomHeader: ' + bottomHeader);
