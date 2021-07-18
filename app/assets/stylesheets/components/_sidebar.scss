@@ -1,0 +1,22 @@
+.sidebar-post {
+  width: 100%; 
+  position: fixed; 
+  top: 0;
+}
+
+.container-sidebar {
+  margin: 0 64px;
+  min-width: 0;
+  max-width: 1336px;
+  width: 100%;
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateY(86px);
+  transition: all .5s;
+}
+
+.slide-in.active {
+  opacity: 1;
+}
