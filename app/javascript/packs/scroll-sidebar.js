@@ -25,20 +25,22 @@ const activeSideBar = () => {
       const headerSize = document.querySelector('.header-post');
       const content = document.querySelector('.post-content');
       
-      const bottomContent = (content.offsetHeight - 500);
-      const bottomHeader = headerSize.offsetHeight;
-      console.log(window.scrollY);
-      console.log('bottomHeader: ' + bottomHeader);
-      console.log('bottomContent: '+ bottomContent);
+      // set values relative to the scroll
+      const slideInAt = (window.scrollY + window.innerHeight);
+      const bottomHeader = (headerSize.offsetHeight + window.innerHeight);
+      const bottomContent = (content.offsetHeight + content.offsetTop);
+      // console.log('slideInAt:' + slideInAt);
+      // console.log('bottomHeader: ' + bottomHeader);
+      // console.log('bottomContent: '+ bottomContent);
 
-      if ((window.scrollY > bottomHeader) && (window.scrollY < bottomContent) ) {
+      if ((slideInAt > bottomHeader) && (slideInAt < bottomContent) ) {
         sidebar.classList.add('active')
       } else {
         sidebar.classList.remove('active');
       }
     }
     
-    window.addEventListener('scroll', debounce(checkSlide));
+    window.addEventListener('scroll', debounce(checkSlide, 10));
   }
 
 }

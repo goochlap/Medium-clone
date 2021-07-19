@@ -48,3 +48,9 @@
 .slide-in.active {
   opacity: 1;
 }
+
+@media (min-width: 250px) and (max-width: 807px) {
+  .sidebar-post {
+    display: none;
+  }
+}
