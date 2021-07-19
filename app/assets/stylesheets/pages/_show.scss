@@ -30,11 +30,19 @@
 
 .post-evaluations {
   display: flex;
+  align-items: center;
+  img {
+    width: 100%;
+  }
+  a {
+    width: 55px;
+  }
   a:nth-child(3) {
-    margin-left: 12px;
+    margin:0 7px 0 20px;
+    width: 30px;
   }
   p {
-    margin-left: 6px;
     font-weight: bold;
+    margin: 0;
   }
 }
