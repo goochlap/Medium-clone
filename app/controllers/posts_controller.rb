@@ -31,7 +31,9 @@ class PostsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  def show; end
+  def show
+    @review = Review.new
+  end
 
   def destroy; end
 

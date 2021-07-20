@@ -8,8 +8,11 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @post = Post.find(params[:post_id])
     @review.post = @post
-    @review.save!
-    redirect_to post_path(@post)
+    if @review.save!
+      redirect_to post_path(@post), notice: "review posted!"
+    else
+      render :new
+    end
   end
 
   private
