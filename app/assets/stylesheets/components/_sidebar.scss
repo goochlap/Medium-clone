@@ -55,7 +55,7 @@
 }
 
 @media (max-width: 1400px) {
-  .sidebar-post {
+  .sidebar-post, .sidebar-reviews {
     display: none;
   }
 }
@@ -79,12 +79,6 @@
   opacity: 1;
   transform: translateX(-541px);
 }
-
-// @media (max-width: 500px) {
-//   .sidebar-reviews {
-//     transform: translateY(100%);
-//   }
-// }
 
 .container-hidden {
   opacity: 0;
