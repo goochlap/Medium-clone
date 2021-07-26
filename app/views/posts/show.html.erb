@@ -11,7 +11,7 @@
       <h3>MOST RELEVANT</h3>
       <hr>
       <div class="reviews-display">
-        <%= render @post.reviews %>
+        <%= render @post.reviews.slice(0, 3) %>
       </div>
     </div>
   </div>
