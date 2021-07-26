@@ -1,7 +1,20 @@
 <article>
 
   <div class="container-hidden"></div>
-  <div class="sidebar-reviews"></div>
+  <div class="sidebar-reviews">
+    <div class="reviews-header">
+      <h3>Responses (<%= @post.reviews.count %>)</h3>
+      <a href="">✖️</a>
+    </div>
+      <%= render 'reviews/new' %>
+    <div class="reviews">
+      <h3>MOST RELEVANT</h3>
+      <hr>
+      <div class="reviews-display">
+        <%= render @post.reviews.slice(0, 3) %>
+      </div>
+    </div>
+  </div>
 
   <div class="sidebar-post slide-in">
     <div class="d-flex justify-content-center">
@@ -10,7 +23,7 @@
 
           <div class="user-infos">
             <h3><a href=""><%= @post.user.name.capitalize %></a></h3>
-            <a href="#" class="btn-follow" style="background-color: green; color:white;">Follow</a>
+            <a href="#" class="btn-follow">Follow</a>
             <div class="s-hr" style="margin: 18px 0;"></div>
           </div>
 
@@ -86,14 +99,6 @@
           <p><%= @post.likes.count %></p>
           <%= link_to image_tag("speech-ballon.png"), new_post_review_path(@post) %>
           <p><%= @post.reviews.count %></p>
-        </div>
-
-        <%= render 'reviews/new' %>
-
-        <div class="reviews">
-          <h3>Reviews</h3>
-          <div class="s-hr"></div>
-          <%= render @post.reviews %>
         </div>
 
       </div>

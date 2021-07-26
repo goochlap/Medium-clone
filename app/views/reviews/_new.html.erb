@@ -1,4 +1,4 @@
 <%= simple_form_for [ @post, @review ] do |f| %>
-  <%= f.input :body, label: 'Write your review' %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <%= f.input :body, label: 'What are your thoughts?', class: 'input-review' %>
+  <%= f.submit "Respond", class: "btn btn-follow" %>
 <% end %>

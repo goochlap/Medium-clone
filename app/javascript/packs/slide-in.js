@@ -1,3 +1,5 @@
+// function to reveal sidebar reviews on 'speechballon' click
+
 const reviewSlideIn = () => {
   const containerHidden = document.querySelector('.container-hidden');
   const sidebarReviews = document.querySelector('.sidebar-reviews');
