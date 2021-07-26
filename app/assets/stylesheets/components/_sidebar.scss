@@ -64,11 +64,6 @@
 
 .sidebar-reviews {
   opacity: 0;
-}
-
-.sidebar-reviews.active {
-  opacity: 1;
-  transform: translateX(-541px);
   transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0s, opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0s;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   left: 100%;
@@ -80,11 +75,16 @@
   z-index: 20;
 }
 
-@media (max-width: 500px) {
-  .sidebar-reviews {
-    transform: translateY(100%);
-  }
+.sidebar-reviews.active {
+  opacity: 1;
+  transform: translateX(-541px);
 }
+
+// @media (max-width: 500px) {
+//   .sidebar-reviews {
+//     transform: translateY(100%);
+//   }
+// }
 
 .container-hidden {
   opacity: 0;
