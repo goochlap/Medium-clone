@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  before_create :default_values
+  # before_create :default_values
   belongs_to :user
   has_many :reviews, dependent: :destroy
   has_many :likes, dependent: :destroy
