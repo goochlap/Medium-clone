@@ -1,18 +1,37 @@
 .form-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background: white;
-  padding: 10px 20px;
-  margin-top: 86px;
+  height: 649px;
+  padding: 9px 60px;
+  margin-top: 98px;
   border-radius: 3px;
   box-shadow: 2px 1px 6px rgba(0,0,0,0.2);
 
+  .form-control {
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid rgba(37, 37, 37, 0.2);
+  }
+
+  .form-control:focus {
+    box-shadow:  none;
+  }
+
   h2 {
     font-weight: bold;
-    text-align: center;
     margin: 15px 0;
-    background-color: #eae8e8;
     font-size: 30px;
     margin: 30px 21px;
   }
+
+  .btn {
+    width: 100%;
+    margin: 12px 0;
+  } 
 }
 
 .form-post-create .field {
