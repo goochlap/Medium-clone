@@ -17,6 +17,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.published = false
     @post.user = current_user
     if @post.save!
       redirect_to user_path(current_user), alert: 'Post created with success!'

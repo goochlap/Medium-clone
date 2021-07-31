@@ -14,7 +14,7 @@
   <div class="container-center">
   
     <div id="posts">
-      <% @posts.each do |post| %>
+      <% @posts.reverse.each do |post| %>
 
         <% if post.published %>
           <div class="card-post s-hr">
@@ -23,8 +23,8 @@
             <h4><%= post.content.to_plain_text.truncate(100) %></h4>
             <p><%= post.created_at.strftime("%B %d, %Y") %> ·</p>
             <span>🚀 <%= post.likes.count %></span>
-            <% end %>
           </div>
+          <% end %>
         <% end %>
     </div>
 
