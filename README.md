@@ -1,4 +1,4 @@
-# [TEST RAILS ROOM IN TOUCH](https://test-rails-room-in-touch.herokuapp.com/)
+# [MEDIUM CLONE](https://medium-rails-clone.herokuapp.com/)
 
 Create a medium clone app
 
