@@ -1,3 +1,7 @@
+body {
+  background-color: rgba(251, 251, 251, 1);
+}
+
 body a {
   color: black;
   text-decoration: none !important;
@@ -18,7 +22,7 @@ h4 {
 }
 
 .wrapper-topics {
-  width: 556px;
+  height: 100%;
   position: sticky;
   padding-top: 32px;
   margin-top: 0px;
