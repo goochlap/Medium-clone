@@ -28,6 +28,7 @@ require("@rails/actiontext")
 import "bootstrap";
 import { activeSideBar } from './scroll-sidebar';
 import { reviewSlideIn } from './slide-in';
+import { actionButtons } from './action-buttons';
 
 
 // Internal imports, e.g:
@@ -37,4 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   activeSideBar();
   reviewSlideIn();
+  actionButtons();
 });

@@ -7,9 +7,8 @@
         <%= link_to "Write a story", new_post_path, class: 'btn btn-dark' %>
       </div>
       <div class="stories-status s-hr">
-        <%# <button class="private-btn">Private</button> %>
-        <a href="" class="private-btn">Private</a>
-        <a href="" class="public-btn">Public</a>
+      <%= link_to 'Private', 'javascript:;' , class: "private-btn" %>
+      <%= link_to 'Public', 'javascript:;' , class: "public-btn" %>
       </div>
 
       <div id="posts">
