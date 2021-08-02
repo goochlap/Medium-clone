@@ -18,7 +18,6 @@ const activeSideBar = () => {
       };
     }
     
-    
     function checkSlide() {
       
       // select elements to scale the scrolling interval

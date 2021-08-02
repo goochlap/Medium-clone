@@ -8,17 +8,16 @@ const actionButtons = () => {
 
   if (buttonPublic && buttonPrivate) {
 
-      buttonPublic.addEventListener('click', () => {
-        privateStatus.style.display = 'none';
-        publicStatus.style.display  = 'block';
-      });
-      buttonPrivate.addEventListener('click', () => {
-        publicStatus.style.display  = 'none';
-        privateStatus.style.display = 'block';
-      });
+    buttonPublic.addEventListener('click', () => {
+      privateStatus.style.display = 'none';
+      publicStatus.style.display  = 'block';
+    });
+    buttonPrivate.addEventListener('click', () => {
+      publicStatus.style.display  = 'none';
+      privateStatus.style.display = 'block';
+    });
     
   }
-
 }
 
 export { actionButtons };
