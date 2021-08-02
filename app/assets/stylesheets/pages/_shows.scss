@@ -1,3 +1,5 @@
+// POSTS SHOW
+
 #post-show {
   margin: 0 64px;
   max-width: 671px;
@@ -40,5 +42,27 @@
   p {
     font-weight: bold;
     margin: 0;
+  }
+}
+
+// USER SHOW
+
+.topic-stories {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+  padding: 24px 0;
+  h1 {
+    font-weight: bold;
+  }
+}
+
+.stories-status {
+  display: flex;
+  > * {
+    font-family: $headers-font;
+    margin-right: 16px;
+    font-size: 18px;
   }
 }
