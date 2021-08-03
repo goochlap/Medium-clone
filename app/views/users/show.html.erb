@@ -2,23 +2,25 @@
   <div class="row">
     <div class="col-12">
 
-      <h1>Your Post</h1>
-      <%= link_to "Create a post", new_post_path, class: 'btn btn-dark' %>
-      <hr>
+      <div class="topic-stories">
+        <h1>Your stories</h1>
+        <%= link_to "Write a story", new_post_path, class: 'btn btn-dark' %>
+      </div>
+      <div class="stories-status s-hr">
+      <%= link_to 'Private', 'javascript:;' , class: "private-btn" %>
+      <%= link_to 'Public', 'javascript:;' , class: "public-btn" %>
+      </div>
+
       <div id="posts">
 
-        <h3>Public</h3>
+        <div class="post-status-private">
+
+          <% check_posts_values = @posts.map { |post| post.published }.uniq %>
         
-        <% @posts.each do |post| %>
-          <% if post.published %>
-            <h4><%= post.title %></h4>
-            <p>· <%= post.created_at.strftime("%Y-%m-%d") %></p>
-            <span><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></span>
+          <% if (check_posts_values.first == true) && (check_posts_values.length == 1) %>
+            <p>You have no stories.</p>
+            <p>Write a story or read one.</p>
           <% end %>
-          <hr>
-        <% end %>
-          
-        <h3>Private</h3>
 
           <% @posts.each do |post| %>
             <% if !post.published %>
@@ -29,6 +31,22 @@
               <hr>
             <% end %>
           <% end %>
+
+        </div>
+        
+        <div class="post-status-public">
+          
+          <% @posts.each do |post| %>
+            <% if post.published %>
+              <h4><%= post.title %></h4>
+              <p>· <%= post.created_at.strftime("%Y-%m-%d") %></p>
+              <span><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></span>
+            <% end %>
+            <hr>
+          <% end %>
+        </div>
+
+          
 
       </div>
 

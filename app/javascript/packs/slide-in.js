@@ -5,15 +5,19 @@ const reviewSlideIn = () => {
   const sidebarReviews = document.querySelector('.sidebar-reviews');
   const speechBallon = document.querySelector('.speech-ballon');
 
-  speechBallon.addEventListener('click', () => {
-    containerHidden.classList.add('active');
-    sidebarReviews.classList.add('active');
-
-    containerHidden.addEventListener('click', () => {
-      containerHidden.classList.remove('active');
-      sidebarReviews.classList.remove('active');
-    })
-  });
+  if (speechBallon) {
+    
+      speechBallon.addEventListener('click', () => {
+        containerHidden.classList.add('active');
+        sidebarReviews.classList.add('active');
+    
+        containerHidden.addEventListener('click', () => {
+          containerHidden.classList.remove('active');
+          sidebarReviews.classList.remove('active');
+        })
+      });
+    
+  }
 }
 
 export { reviewSlideIn };
